@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head');%>
+</head>
+
+<body>
+
+    <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <div class="container">
+        <h1>
+            Edit Item
+        </h1>
+        <div class="row">
+            <form action="/store/<%=product._id%>?_method=PUT" method="POST">
+                <label for="name">Name</label>
+                <input class="u-full-width" type="text" placeholder="Enter an item name" id="name" name="name"
+                    value="<%=product.name%>" />
+                <label for="name">Image</label>
+                <input class="u-full-width" type="text" placeholder="Enter an image url" id="img" name="img"
+                    value="<%=product.img%>" />
+                <label for="name">Price</label>
+                <input class="u-full-width" type="text" placeholder="Enter a price" id="price" name="price"
+                    value="<%=product.price%>" />
+                <label for="name">Qty</label>
+                <input class="u-full-width" type="text" placeholder="Enter quantiy" id="qty" name="qty"
+                    value="<%=product.qty%>" />
+
+                <input class="button-primary" type="submit" value="Add Item" />
+            </form>
+        </div>
+
+        <!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+
+</html>

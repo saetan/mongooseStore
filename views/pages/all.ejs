@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head');%>
+</head>
+
+<body>
+
+    <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <div class="container">
+        <h1>Index List</h1>
+        <a class="button button-primary" href="/store/new">Create a Item</a>
+        <div class="row">
+            <div class="twelve column">
+                <table class="u-full-width">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Image</th>
+                            <th>Price</th>
+                            <th>Qty</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%for(let product in products) {%>
+                            <tr>
+                                <td>
+                                    <a href="/store/<%=products[product]._id%>">
+                                        <%=products[product].name%>
+                                    </a>
+                                </td>
+                                <td>
+                                    <img src="<%=products[product].img%>" width=500 />
+                                </td>
+                                <td>
+                                    <%=products[product].price%>
+                                </td>
+                                <td>
+                                    <%=products[product].qty%>
+                                </td>
+                                <td>
+                                    <%=products[product].description%>
+                                </td>
+                            </tr>
+                            <%}%>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+
+</html>

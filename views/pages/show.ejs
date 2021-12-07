@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head');%>
+</head>
+
+<body>
+
+    <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <div class="container">
+        <h1>
+            <%=product.name%>
+        </h1>
+        <div class="row">
+            <a class="button button-primary" href="/store/<%=product._id%>/edit">Edit Item</a>
+            <form method="POST" action="/store/<%=product._id%>?_method=DELETE">
+                <button class="button button-primary" type="submit">Delete</button>
+            </form>
+        </div>
+        <div class="row">
+            <img src="<%=product.img%>" />
+            <div class="twelve column">
+                <table class="u-full-width">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Qty</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <a>
+                                    <%=product.name%>
+                                </a>
+                            </td>
+                            <td>
+                                <%=product.price%>
+                            </td>
+                            <td>
+                                <%=product.qty%>
+                            </td>
+                            <td>
+                                <%=product.description%>
+                                    </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <form method="POST" action="/store/<%=product._id%>?_method=PATCH"></form>
+        <% if (product.qty> 0) { %>
+            <button class="button button-primary" type="submit">Buy</button>
+            <% } %>
+                </form>
+    </div>
+
+    <!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+
+</html>
